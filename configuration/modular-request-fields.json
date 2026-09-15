@@ -1,0 +1,314 @@
+[
+  {
+    "page": "Lab",
+    "name": "profile_name",
+    "title": "Catalog configuration",
+    "type": "string",
+    "description": "Configuration created with Configure Modular Catalog; separate from your Maven build profile.",
+    "default": "lab"
+  },
+  {
+    "page": "Lab",
+    "name": "lab_name",
+    "title": "Lab name",
+    "type": "string",
+    "default": "nested-vcf-modular"
+  },
+  {
+    "page": "Lab",
+    "name": "lab_password",
+    "title": "Shared lab password",
+    "type": "string",
+    "minLength": 15,
+    "description": "Plaintext lab input. Used by guest bootstrap and the generated VCF JSON; no password is stored in source."
+  },
+  {
+    "page": "Lab",
+    "name": "vyos_rest_api_key",
+    "title": "VyOS REST API key",
+    "type": "string",
+    "minLength": 12
+  },
+  {
+    "page": "Lab",
+    "name": "deploy_esxi",
+    "title": "Deploy ESXi hosts",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "page": "Lab",
+    "name": "deploy_installer",
+    "title": "Deploy VCF Installer",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "page": "Lab",
+    "name": "deploy_jumphost",
+    "title": "Deploy Windows jumphost",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "page": "Placement",
+    "name": "region_name",
+    "title": "Region",
+    "type": "string",
+    "default": "region-dclab"
+  },
+  {
+    "page": "Placement",
+    "name": "namespace_class",
+    "title": "Namespace class",
+    "type": "string",
+    "default": "x-large"
+  },
+  {
+    "page": "Placement",
+    "name": "seg_name",
+    "title": "Supervisor selector",
+    "type": "string",
+    "default": "pco"
+  },
+  {
+    "page": "Placement",
+    "name": "zone_name",
+    "title": "Zone",
+    "type": "string",
+    "default": "domain-c9"
+  },
+  {
+    "page": "Placement",
+    "name": "storage_policy",
+    "title": "Storage policy",
+    "type": "string",
+    "default": "vsan-default-storage-policy"
+  },
+  {
+    "page": "Placement",
+    "name": "storage_limit_gib",
+    "title": "Namespace storage quota (GiB)",
+    "type": "number",
+    "minimum": 1,
+    "default": 8192
+  },
+  {
+    "page": "Placement",
+    "name": "cpu_limit",
+    "title": "Namespace CPU limit",
+    "type": "string",
+    "default": "400G"
+  },
+  {
+    "page": "Placement",
+    "name": "memory_limit_gib",
+    "title": "Namespace memory limit (GiB)",
+    "type": "number",
+    "minimum": 1,
+    "default": 500
+  },
+  {
+    "page": "Network",
+    "name": "dns_prefix",
+    "title": "Hostname prefix",
+    "type": "string",
+    "default": "mt"
+  },
+  {
+    "page": "Network",
+    "name": "domain_name",
+    "title": "DNS domain",
+    "type": "string",
+    "default": "dclab.se"
+  },
+  {
+    "page": "Network",
+    "name": "lab_cidr",
+    "title": "Lab private network (/16)",
+    "type": "string",
+    "description": "This first modular contract uses /24 networks inside one private /16. Host IPs follow this prefix.",
+    "default": "172.16.0.0/16"
+  },
+  {
+    "page": "Network",
+    "name": "vlan_base",
+    "title": "First VLAN (management)",
+    "type": "number",
+    "minimum": 1,
+    "maximum": 4090,
+    "default": 1601
+  },
+  {
+    "page": "Network",
+    "name": "dns_forwarder",
+    "title": "Upstream DNS server",
+    "type": "string",
+    "default": "1.1.1.1"
+  },
+  {
+    "page": "Network",
+    "name": "ntp_server",
+    "title": "Upstream NTP server",
+    "type": "string",
+    "default": "time1.vyos.net"
+  },
+  {
+    "page": "Network",
+    "name": "fabric_mtu",
+    "title": "Nested network MTU",
+    "type": "number",
+    "minimum": 1600,
+    "maximum": 9000,
+    "description": "Keeps your tested default. A higher value requires an outer network that carries it.",
+    "default": 8800
+  },
+  {
+    "page": "Network",
+    "name": "vyos_image",
+    "title": "VyOS VM image",
+    "type": "string",
+    "default": "vmi-576b17f7f8892d741"
+  },
+  {
+    "page": "Network",
+    "name": "vyos_class",
+    "title": "VyOS VM class",
+    "type": "string",
+    "default": "best-effort-medium"
+  },
+  {
+    "page": "ESXi",
+    "name": "esx_image",
+    "title": "ESXi VM image",
+    "type": "string",
+    "default": "vmi-0a831a3ed5c05b0a1"
+  },
+  {
+    "page": "ESXi",
+    "name": "esx_class",
+    "title": "ESXi VM class",
+    "type": "string",
+    "default": "nested-esx-small"
+  },
+  {
+    "page": "ESXi",
+    "name": "esx_count",
+    "title": "Number of ESXi hosts",
+    "type": "number",
+    "minimum": 1,
+    "maximum": 64,
+    "default": 4
+  },
+  {
+    "page": "ESXi",
+    "name": "esx_first_host",
+    "title": "First management host number",
+    "type": "number",
+    "minimum": 2,
+    "maximum": 254,
+    "description": "Hosts are allocated sequentially in management /24. Validation rejects collisions with appliances and pools.",
+    "default": 101
+  },
+  {
+    "page": "ESXi",
+    "name": "esx_vsan_disk_enabled",
+    "title": "Add one vSAN NVMe disk per host",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "page": "ESXi",
+    "name": "esx_vsan_disk_size_gib",
+    "title": "vSAN disk size per host (GiB)",
+    "type": "number",
+    "minimum": 1,
+    "default": 400
+  },
+  {
+    "page": "ESXi",
+    "name": "vsan_allow_hcl_incompatible_disks",
+    "title": "Allow auto claim of HCL incompatible disks",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "page": "Installer",
+    "name": "installer_image",
+    "title": "Installer VM image",
+    "type": "string",
+    "default": "vmi-992f6225042baf914"
+  },
+  {
+    "page": "Installer",
+    "name": "installer_class",
+    "title": "Installer VM class",
+    "type": "string",
+    "default": "best-effort-2xlarge"
+  },
+  {
+    "page": "Installer",
+    "name": "installer_host",
+    "title": "Installer management host number",
+    "type": "number",
+    "minimum": 2,
+    "maximum": 254,
+    "default": 10
+  },
+  {
+    "page": "Installer",
+    "name": "install_automation",
+    "title": "Include VCF Automation in the specification",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "page": "Installer",
+    "name": "run_vcf_installation",
+    "title": "Run VCF bring-up through the existing custom resource",
+    "type": "boolean",
+    "description": "Enable after testing guest readiness. Uses your existing VCF and installer-certificate workflows.",
+    "default": false
+  },
+  {
+    "page": "Installer",
+    "name": "depot_url",
+    "title": "VCF depot URL",
+    "type": "string",
+    "required": false,
+    "description": "Required when Run VCF bring-up is selected; the Installer must reach this URL.",
+    "default": ""
+  },
+  {
+    "page": "Jumphost",
+    "name": "jumphost_image",
+    "title": "Windows VM image",
+    "type": "string",
+    "default": "vmi-bb0ae6c186c4d4448"
+  },
+  {
+    "page": "Jumphost",
+    "name": "jumphost_class",
+    "title": "Windows VM class",
+    "type": "string",
+    "default": "best-effort-medium"
+  },
+  {
+    "page": "Jumphost",
+    "name": "jumphost_host",
+    "title": "Jumphost uplink host number",
+    "type": "number",
+    "minimum": 3,
+    "maximum": 254,
+    "default": 4
+  },
+  {
+    "page": "Recovery",
+    "name": "resume_deployments",
+    "title": "Existing deployment IDs (JSON)",
+    "type": "string",
+    "required": false,
+    "description": "Leave empty for a new lab. To resume, paste deploymentIds from the earlier workflow run and use the same lab inputs.",
+    "default": ""
+  }
+]

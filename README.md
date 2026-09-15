@@ -5,6 +5,11 @@ workflows used by Nested VCF Lab. Its intended umbrella location is
 `components/vro-typescript`, with its own repository and independent releases.
 The CCI blueprint remains in `nested-vcf-automation`.
 
+The [modular deployment guide](docs/modular-lab.md) describes **Deploy Modular
+VCF Lab**, its seven-page request form, catalog configuration, and resume flow.
+The original naming example remains under `src/lab`; the deployment implementation
+is isolated under `src/modular`.
+
 ## Toolchain and output
 
 The Maven parent is `com.vmware.pscoe.o11n:typescript-project-all:4.25.0`, matching
@@ -50,6 +55,8 @@ Maven setup already used to build `nested-vcf-automation`.
 | `src/lab/actions/getLabFqdn.ts` | Action entry point accepting a short hostname and domain |
 | `src/lab/workflows/DescribeLabHost.wf.ts` | Example workflow returning the FQDN without changing infrastructure |
 | `configuration/settings.example.xml` | Non-secret target-profile example |
+| `src/modular/` | Four-stage catalog deployment workflow, request form and typed lab/VCF plan |
+| `configuration/modular-request-fields.json` | Modular form layout, field defaults and descriptions |
 
 The workflow has a stable UUID so that a new package updates the same workflow.
 Give every new workflow its own stable UUID. Keep VM lifecycle calls, REST
@@ -125,6 +132,7 @@ tag `v4.25.0`, commit `2ead8f52c9ed351205c6054b770d3a385d403314`:
 [archetype POM](https://github.com/vmware/build-tools-for-vmware-aria/blob/v4.25.0/maven/archetypes/ts/src/main/resources/archetype-resources/pom.xml).
 Build Tools is maintained by VMware/Broadcom and its contributors.
 
-The initial scaffold was checked offline. Full Maven packaging, the vRO
-transpiler/Jasmine lifecycle, and import/execution on Orchestrator must be run
-on the configured Ubuntu build host; they were not run in the scaffold workspace.
+The modular implementation has been checked with the official 4.25.0 vRO
+transpiler and standalone TypeScript/Jasmine tests. Full Maven package assembly
+and import/execution still need verification on the configured Ubuntu build
+host and Orchestrator. See the [first integration test](docs/modular-lab.md#first-integration-test).

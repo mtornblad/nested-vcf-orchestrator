@@ -1,0 +1,1304 @@
+{
+  "layout": {
+    "pages": [
+      {
+        "id": "page_lab",
+        "title": "Lab",
+        "sections": [
+          {
+            "id": "section_profile_name",
+            "fields": [
+              {
+                "id": "profile_name",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "lab_name",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_lab_password",
+            "fields": [
+              {
+                "id": "lab_password",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "vyos_rest_api_key",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_deploy_esxi",
+            "fields": [
+              {
+                "id": "deploy_esxi",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "deploy_installer",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_deploy_jumphost",
+            "fields": [
+              {
+                "id": "deploy_jumphost",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {}
+      },
+      {
+        "id": "page_placement",
+        "title": "Placement",
+        "sections": [
+          {
+            "id": "section_region_name",
+            "fields": [
+              {
+                "id": "region_name",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "namespace_class",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_seg_name",
+            "fields": [
+              {
+                "id": "seg_name",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "zone_name",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_storage_policy",
+            "fields": [
+              {
+                "id": "storage_policy",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "storage_limit_gib",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_cpu_limit",
+            "fields": [
+              {
+                "id": "cpu_limit",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "memory_limit_gib",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {}
+      },
+      {
+        "id": "page_network",
+        "title": "Network",
+        "sections": [
+          {
+            "id": "section_dns_prefix",
+            "fields": [
+              {
+                "id": "dns_prefix",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "domain_name",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_lab_cidr",
+            "fields": [
+              {
+                "id": "lab_cidr",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "vlan_base",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_dns_forwarder",
+            "fields": [
+              {
+                "id": "dns_forwarder",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "ntp_server",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_fabric_mtu",
+            "fields": [
+              {
+                "id": "fabric_mtu",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "vyos_image",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_vyos_class",
+            "fields": [
+              {
+                "id": "vyos_class",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {}
+      },
+      {
+        "id": "page_esxi",
+        "title": "ESXi",
+        "sections": [
+          {
+            "id": "section_esx_image",
+            "fields": [
+              {
+                "id": "esx_image",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "esx_class",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_esx_count",
+            "fields": [
+              {
+                "id": "esx_count",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "esx_first_host",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_esx_vsan_disk_enabled",
+            "fields": [
+              {
+                "id": "esx_vsan_disk_enabled",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "esx_vsan_disk_size_gib",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_vsan_allow_hcl_incompatible_disks",
+            "fields": [
+              {
+                "id": "vsan_allow_hcl_incompatible_disks",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {
+          "visible": [
+            {
+              "equals": {
+                "deploy_esxi": true
+              },
+              "value": true
+            },
+            {
+              "equals": {
+                "deploy_esxi": false
+              },
+              "value": false
+            }
+          ]
+        }
+      },
+      {
+        "id": "page_installer",
+        "title": "Installer",
+        "sections": [
+          {
+            "id": "section_installer_image",
+            "fields": [
+              {
+                "id": "installer_image",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "installer_class",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_installer_host",
+            "fields": [
+              {
+                "id": "installer_host",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "install_automation",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_run_vcf_installation",
+            "fields": [
+              {
+                "id": "run_vcf_installation",
+                "display": "checkbox",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "depot_url",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {
+          "visible": [
+            {
+              "equals": {
+                "deploy_installer": true
+              },
+              "value": true
+            },
+            {
+              "equals": {
+                "deploy_installer": false
+              },
+              "value": false
+            }
+          ]
+        }
+      },
+      {
+        "id": "page_jumphost",
+        "title": "Jumphost",
+        "sections": [
+          {
+            "id": "section_jumphost_image",
+            "fields": [
+              {
+                "id": "jumphost_image",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              },
+              {
+                "id": "jumphost_class",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          },
+          {
+            "id": "section_jumphost_host",
+            "fields": [
+              {
+                "id": "jumphost_host",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {
+          "visible": [
+            {
+              "equals": {
+                "deploy_jumphost": true
+              },
+              "value": true
+            },
+            {
+              "equals": {
+                "deploy_jumphost": false
+              },
+              "value": false
+            }
+          ]
+        }
+      },
+      {
+        "id": "page_recovery",
+        "title": "Recovery",
+        "sections": [
+          {
+            "id": "section_resume_deployments",
+            "fields": [
+              {
+                "id": "resume_deployments",
+                "display": "textArea",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                },
+                "signpostPosition": "right-middle"
+              }
+            ]
+          }
+        ],
+        "state": {}
+      }
+    ]
+  },
+  "schema": {
+    "profile_name": {
+      "label": "Catalog configuration",
+      "description": "Configuration created with Configure Modular Catalog; separate from your Maven build profile.",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "lab"
+    },
+    "lab_name": {
+      "label": "Lab name",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "nested-vcf-modular"
+    },
+    "lab_password": {
+      "label": "Shared lab password",
+      "description": "Plaintext lab input. Used by guest bootstrap and the generated VCF JSON; no password is stored in source.",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true,
+        "min-length": 15
+      }
+    },
+    "vyos_rest_api_key": {
+      "label": "VyOS REST API key",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true,
+        "min-length": 12
+      }
+    },
+    "deploy_esxi": {
+      "label": "Deploy ESXi hosts",
+      "description": "",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": true
+    },
+    "deploy_installer": {
+      "label": "Deploy VCF Installer",
+      "description": "",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": true
+    },
+    "deploy_jumphost": {
+      "label": "Deploy Windows jumphost",
+      "description": "",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": true
+    },
+    "region_name": {
+      "label": "Region",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "region-dclab"
+    },
+    "namespace_class": {
+      "label": "Namespace class",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "x-large"
+    },
+    "seg_name": {
+      "label": "Supervisor selector",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "pco"
+    },
+    "zone_name": {
+      "label": "Zone",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "domain-c9"
+    },
+    "storage_policy": {
+      "label": "Storage policy",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "vsan-default-storage-policy"
+    },
+    "storage_limit_gib": {
+      "label": "Namespace storage quota (GiB)",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true,
+        "min-value": 1
+      },
+      "default": 8192
+    },
+    "cpu_limit": {
+      "label": "Namespace CPU limit",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "400G"
+    },
+    "memory_limit_gib": {
+      "label": "Namespace memory limit (GiB)",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true,
+        "min-value": 1
+      },
+      "default": 500
+    },
+    "dns_prefix": {
+      "label": "Hostname prefix",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "mt"
+    },
+    "domain_name": {
+      "label": "DNS domain",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "dclab.se"
+    },
+    "lab_cidr": {
+      "label": "Lab private network (/16)",
+      "description": "This first modular contract uses /24 networks inside one private /16. Host IPs follow this prefix.",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "172.16.0.0/16"
+    },
+    "vlan_base": {
+      "label": "First VLAN (management)",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true,
+        "min-value": 1,
+        "max-value": 4090
+      },
+      "default": 1601
+    },
+    "dns_forwarder": {
+      "label": "Upstream DNS server",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "1.1.1.1"
+    },
+    "ntp_server": {
+      "label": "Upstream NTP server",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "time1.vyos.net"
+    },
+    "fabric_mtu": {
+      "label": "Nested network MTU",
+      "description": "Keeps your tested default. A higher value requires an outer network that carries it.",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true,
+        "min-value": 1600,
+        "max-value": 9000
+      },
+      "default": 8800
+    },
+    "vyos_image": {
+      "label": "VyOS VM image",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "vmi-576b17f7f8892d741"
+    },
+    "vyos_class": {
+      "label": "VyOS VM class",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "best-effort-medium"
+    },
+    "esx_image": {
+      "label": "ESXi VM image",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": "vmi-0a831a3ed5c05b0a1"
+    },
+    "esx_class": {
+      "label": "ESXi VM class",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": "nested-esx-small"
+    },
+    "esx_count": {
+      "label": "Number of ESXi hosts",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ],
+        "min-value": 1,
+        "max-value": 64
+      },
+      "default": 4
+    },
+    "esx_first_host": {
+      "label": "First management host number",
+      "description": "Hosts are allocated sequentially in management /24. Validation rejects collisions with appliances and pools.",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ],
+        "min-value": 2,
+        "max-value": 254
+      },
+      "default": 101
+    },
+    "esx_vsan_disk_enabled": {
+      "label": "Add one vSAN NVMe disk per host",
+      "description": "",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": true
+    },
+    "esx_vsan_disk_size_gib": {
+      "label": "vSAN disk size per host (GiB)",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ],
+        "min-value": 1
+      },
+      "default": 400
+    },
+    "vsan_allow_hcl_incompatible_disks": {
+      "label": "Allow auto claim of HCL incompatible disks",
+      "description": "",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_esxi": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_esxi": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": true
+    },
+    "installer_image": {
+      "label": "Installer VM image",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_installer": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_installer": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": "vmi-992f6225042baf914"
+    },
+    "installer_class": {
+      "label": "Installer VM class",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_installer": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_installer": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": "best-effort-2xlarge"
+    },
+    "installer_host": {
+      "label": "Installer management host number",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_installer": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_installer": false
+            },
+            "value": false
+          }
+        ],
+        "min-value": 2,
+        "max-value": 254
+      },
+      "default": 10
+    },
+    "install_automation": {
+      "label": "Include VCF Automation in the specification",
+      "description": "",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_installer": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_installer": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": false
+    },
+    "run_vcf_installation": {
+      "label": "Run VCF bring-up through the existing custom resource",
+      "description": "Enable after testing guest readiness. Uses your existing VCF and installer-certificate workflows.",
+      "type": {
+        "dataType": "boolean",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_installer": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_installer": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": false
+    },
+    "depot_url": {
+      "label": "VCF depot URL",
+      "description": "Required when Run VCF bring-up is selected; the Installer must reach this URL.",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_installer": true
+            },
+            "value": false
+          },
+          {
+            "equals": {
+              "deploy_installer": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": ""
+    },
+    "jumphost_image": {
+      "label": "Windows VM image",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_jumphost": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_jumphost": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": "vmi-bb0ae6c186c4d4448"
+    },
+    "jumphost_class": {
+      "label": "Windows VM class",
+      "description": "",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_jumphost": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_jumphost": false
+            },
+            "value": false
+          }
+        ]
+      },
+      "default": "best-effort-medium"
+    },
+    "jumphost_host": {
+      "label": "Jumphost uplink host number",
+      "description": "",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": [
+          {
+            "equals": {
+              "deploy_jumphost": true
+            },
+            "value": true
+          },
+          {
+            "equals": {
+              "deploy_jumphost": false
+            },
+            "value": false
+          }
+        ],
+        "min-value": 3,
+        "max-value": 254
+      },
+      "default": 4
+    },
+    "resume_deployments": {
+      "label": "Existing deployment IDs (JSON)",
+      "description": "Leave empty for a new lab. To resume, paste deploymentIds from the earlier workflow run and use the same lab inputs.",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": false
+      },
+      "default": ""
+    }
+  },
+  "options": {
+    "externalValidations": []
+  }
+}

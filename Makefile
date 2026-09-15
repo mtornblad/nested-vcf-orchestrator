@@ -6,6 +6,7 @@ MAVEN_FLAGS ?= --batch-mode --no-transfer-progress
 
 validate:
 	$(PYTHON) scripts/validate_project.py
+	$(PYTHON) scripts/generate_modular_form.py --check
 
 test: validate
 	$(MAVEN) $(MAVEN_FLAGS) test

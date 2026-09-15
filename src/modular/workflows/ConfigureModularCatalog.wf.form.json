@@ -1,0 +1,264 @@
+{
+  "schema": {
+    "profileName": {
+      "label": "Catalog profile",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": "lab"
+    },
+    "connectionSid": {
+      "label": "VCFA connection SID",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": false
+      },
+      "default": ""
+    },
+    "projectId": {
+      "label": "Project ID",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      }
+    },
+    "foundationId": {
+      "label": "Foundation catalog item ID",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      }
+    },
+    "esxiId": {
+      "label": "ESXi catalog item ID",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      }
+    },
+    "installerId": {
+      "label": "Installer catalog item ID",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      }
+    },
+    "jumphostId": {
+      "label": "Jumphost catalog item ID",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      }
+    },
+    "catalogVersion": {
+      "label": "Published version (optional)",
+      "type": {
+        "dataType": "string",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": false
+      },
+      "default": ""
+    },
+    "timeoutMinutes": {
+      "label": "Timeout per deployment (minutes)",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": 120
+    },
+    "pollSeconds": {
+      "label": "Poll interval (seconds)",
+      "type": {
+        "dataType": "integer",
+        "isMultiple": false
+      },
+      "constraints": {
+        "required": true
+      },
+      "default": 30
+    }
+  },
+  "layout": {
+    "pages": [
+      {
+        "id": "connection",
+        "title": "Connection",
+        "sections": [
+          {
+            "id": "section_profileName",
+            "fields": [
+              {
+                "id": "profileName",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_connectionSid",
+            "fields": [
+              {
+                "id": "connectionSid",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_projectId",
+            "fields": [
+              {
+                "id": "projectId",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "catalog_items",
+        "title": "Catalog items",
+        "sections": [
+          {
+            "id": "section_foundationId",
+            "fields": [
+              {
+                "id": "foundationId",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_esxiId",
+            "fields": [
+              {
+                "id": "esxiId",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_installerId",
+            "fields": [
+              {
+                "id": "installerId",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_jumphostId",
+            "fields": [
+              {
+                "id": "jumphostId",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_catalogVersion",
+            "fields": [
+              {
+                "id": "catalogVersion",
+                "display": "textField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "execution",
+        "title": "Execution",
+        "sections": [
+          {
+            "id": "section_timeoutMinutes",
+            "fields": [
+              {
+                "id": "timeoutMinutes",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "section_pollSeconds",
+            "fields": [
+              {
+                "id": "pollSeconds",
+                "display": "integerField",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "options": {
+    "externalValidations": []
+  }
+}
