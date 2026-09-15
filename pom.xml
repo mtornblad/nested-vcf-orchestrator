@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.vmware.pscoe.o11n</groupId>
+        <artifactId>typescript-project-all</artifactId>
+        <version>4.25.0</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>io.github.mtornblad</groupId>
+    <artifactId>nested-vcf-orchestrator</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>package</packaging>
+    <name>${project.artifactId}</name>
+    <description>TypeScript workflows and actions for the Nested VCF Lab.</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <generated.from>package-typescript-archetype</generated.from>
+        <license.organizationName>Nested VCF Lab contributors</license.organizationName>
+        <license.includes></license.includes>
+        <license.excludes>**/*</license.excludes>
+    </properties>
+</project>

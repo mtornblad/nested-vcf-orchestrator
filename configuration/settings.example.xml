@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+    <!-- Merge this profile's properties into your existing private settings. -->
+    <profiles>
+        <profile>
+            <id>lab</id>
+            <properties>
+                <vro.host>${env.VRO_HOST}</vro.host>
+                <vro.port>443</vro.port>
+                <vro.auth>vra</vro.auth>
+                <vro.authHost>${env.VCFA_HOST}</vro.authHost>
+                <vro.authPort>443</vro.authPort>
+                <vro.username>${env.VRO_USERNAME}</vro.username>
+                <vro.password>${env.VRO_PASSWORD}</vro.password>
+                <vrealize.ssl.ignore.certificate>false</vrealize.ssl.ignore.certificate>
+                <vrealize.ssl.ignore.hostname>false</vrealize.ssl.ignore.hostname>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
