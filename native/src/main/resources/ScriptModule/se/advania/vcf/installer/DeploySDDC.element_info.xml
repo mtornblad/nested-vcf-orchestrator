@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment><![CDATA[{
+  "comment": "{\n  \"comment\": \"UTF-16\",\n  \"returnType\": {\n    \"name\": null,\n    \"type\": \"Properties\",\n    \"description\": \"\"\n  },\n  \"javadoc\": null,\n  \"crc\": \"3be22965\"\n}",
+  "returnType": {
+    "name": null,
+    "type": "Properties",
+    "description": ""
+  },
+  "javadoc": null,
+  "crc": "589cffc5"
+}]]></comment>
+  <entry key="categoryPath">se.advania.vcf.installer</entry>
+  <entry key="name">DeploySDDC</entry>
+  <entry key="type">ScriptModule</entry>
+  <entry key="id">530057a7-f2d1-49ff-9df9-c9cbc8d609ab</entry>
+</properties>

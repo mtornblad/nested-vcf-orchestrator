@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="vcfUiReady" result-type="boolean" api-version="6.0.0" id="ab0103c3-7d07-4593-b8ad-0133bb7d0e58" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="restHost" t="REST:RESTHost"/>
+  <param n="username" t="string"/>
+  <param n="password" t="SecureString"/>
+  <script encoded="false"><![CDATA[const method = "POST";
+const url = "/v1/tokens";
+const contentType = "application/json";
+
+const content = {
+    "username": username,
+    "password": password
+};
+
+var request = restHost.createRequest(method, url, JSON.stringify(content));
+request.contentType = contentType;
+
+var response = request.execute();
+
+var statusCode = response.statusCode;
+System.log("Status code: " + statusCode);
+
+var contentAsString = response.contentAsString;
+
+// Kontrollera om anropet lyckades med en 20x-statuskod (200–299)
+if (statusCode >= 200 && statusCode < 300) {
+    return true;
+} else {
+    System.warn("Autentiseringen misslyckades. Statuskod: " + statusCode);
+    return false;
+}]]></script>
+</dunes-script-module>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>UTF-16</comment>
+  <entry key="categoryPath">Advania.Test</entry>
+  <entry key="name">Download Bundles For Release</entry>
+  <entry key="type">Workflow</entry>
+  <entry key="id">93b1e613-8353-45ef-a0fe-893f8ac165d1</entry>
+</properties>

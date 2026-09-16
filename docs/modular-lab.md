@@ -147,8 +147,10 @@ their own API interactions when bring-up is enabled.
 
 **Run VCF bring-up** requires ESXi, Installer, capacity disks, a depot URL, and
 the existing `VCF` and `VCF Installler Certificate` custom-resource workflow
-implementations in the target. Those implementations are not part of this
-new TypeScript source. Enable it in a subsequent test after confirming the
+implementations in the target. They are now included as
+[native source in this package](custom-resources.md), including the existing
+workflow IDs. Check the documented Configurator dependency and retained
+placeholder/polling behavior. Enable it in a subsequent test after confirming the
 guest readiness behavior; bundle availability and VCF validation remain
 requirements of the target environment.
 

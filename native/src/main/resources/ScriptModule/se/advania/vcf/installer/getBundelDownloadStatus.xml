@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getBundelDownloadStatus" result-type="string" api-version="6.0.0" id="88002f0b-493a-4391-94d0-419978f52cf7" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="restHost" t="REST:RESTHost"/>
+  <param n="installerToken" t="SecureString"/>
+  <param n="bundleId" t="string"/>
+  <script encoded="false"><![CDATA[const method = "GET";
+const url = "/v1/bundles/" + bundleId;
+const contentType = "application/json";
+
+const content = {
+    "bundleDownloadSpec": {
+        "downloadNow": true
+    }
+};
+
+var request = restHost.createRequest(method, url, JSON.stringify(content));
+request.contentType = contentType;
+request.setHeader("Authorization", "Bearer " + installerToken);
+
+var response = request.execute();
+
+var statusCode = response.statusCode;
+System.log("Status code: " + statusCode);
+
+var contentAsString = response.contentAsString;
+
+// Kontrollera om anropet lyckades med en 20x-statuskod (200–299)
+if (statusCode >= 200 && statusCode < 300) {
+    try {
+        var parsedResponse = JSON.parse(contentAsString);
+        return parsedResponse.downloadStatus || null;
+    } catch (e) {
+        System.error("Misslyckades att parsa JSON-svaret: " + e);
+        return null;
+    }
+} else {
+    System.error("Anropet misslyckades med statuskod: " + statusCode);
+    return null;
+}]]></script>
+</dunes-script-module>

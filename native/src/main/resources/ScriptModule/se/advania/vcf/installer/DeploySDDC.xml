@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="DeploySDDC" result-type="Properties" api-version="6.0.0" id="530057a7-f2d1-49ff-9df9-c9cbc8d609ab" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="restHost" t="REST:RESTHost"/>
+  <param n="installerToken" t="SecureString"/>
+  <param n="sddcSpec" t="string"/>
+  <script encoded="false"><![CDATA[const method = "POST";
+const url = "/v1/sddcs"; // ?skipValidations=true";
+const contentType = "application/json"
+
+
+
+var request = restHost.createRequest(method, url, sddcSpec);
+request.contentType = contentType;
+request.setHeader("Authorization", "Bearer " + installerToken);
+
+var response = request.execute();
+
+
+var statusCode = response.statusCode;
+var statusCodeAttribute = statusCode;
+System.log("Status code: " + statusCode);
+var contentLength = response.contentLength;
+var headers = response.getAllHeaders();
+var contentAsString = response.contentAsString;
+
+return JSON.parse(contentAsString);
+
+
+]]></script>
+</dunes-script-module>

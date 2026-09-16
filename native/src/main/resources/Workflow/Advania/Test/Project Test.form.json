@@ -1,0 +1,72 @@
+{
+  "schema": {
+    "baseUrl": {
+      "id": "baseUrl",
+      "type": {
+        "dataType": "string"
+      },
+      "label": "VCF Automation URL",
+      "constraints": {
+        "required": true
+      }
+    },
+    "project": {
+      "id": "project",
+      "type": {
+        "dataType": "string"
+      },
+      "label": "CCI project namespace",
+      "constraints": {
+        "required": true
+      }
+    },
+    "token": {
+      "id": "token",
+      "type": {
+        "dataType": "secureString"
+      },
+      "label": "Access token",
+      "constraints": {
+        "required": true
+      }
+    }
+  },
+  "layout": {
+    "pages": [
+      {
+        "id": "connection",
+        "title": "Connection",
+        "sections": [
+          {
+            "id": "connection_baseUrl",
+            "fields": [
+              {
+                "id": "baseUrl",
+                "display": "textField"
+              }
+            ]
+          },
+          {
+            "id": "connection_project",
+            "fields": [
+              {
+                "id": "project",
+                "display": "textField"
+              }
+            ]
+          },
+          {
+            "id": "connection_token",
+            "fields": [
+              {
+                "id": "token",
+                "display": "passwordField"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "itemId": ""
+}

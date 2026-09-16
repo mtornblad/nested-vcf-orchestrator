@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item2" object-name="workflow:name=generic" id="649c1113-0448-4ca8-bdee-2e9791164e50" version="0.0.0" api-version="6.0.0" allowed-operations="vfe" editor-version="2.0" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Create VCF]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <input>
+    <param name="baseUrl" type="string"/>
+    <param name="username" type="string"/>
+    <param name="password" type="SecureString"/>
+    <param name="version" type="string"/>
+    <param name="excludeArray" type="Array/string"/>
+    <param name="depotUrl" type="string"/>
+    <param name="includeArray" type="Array/string"/>
+    <param name="sddcSpec" type="string"/>
+  </input>
+  <output>
+    <param name="vcf" type="string"/>
+    <param name="sddcInstallStatus" type="Properties"/>
+  </output>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <in-binding/>
+    <position y="50.0" x="460.0"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item0" type="link" linked-workflow-id="6338706b-b8b4-4b6c-9488-219af138d1d3">
+    <display-name><![CDATA[Install VCF]]></display-name>
+    <in-binding>
+      <bind name="baseUrl" type="string" export-name="baseUrl"/>
+      <bind name="username" type="string" export-name="username"/>
+      <bind name="password" type="SecureString" export-name="password"/>
+      <bind name="version" type="string" export-name="version"/>
+      <bind name="excludeArray" type="Array/string" export-name="excludeArray"/>
+      <bind name="depotUrl" type="string" export-name="depotUrl"/>
+      <bind name="includeArray" type="Array/string" export-name="includeArray"/>
+      <bind name="sddcSpec" type="string" export-name="sddcSpec"/>
+    </in-binding>
+    <out-binding>
+      <bind name="vcf" type="string" export-name="vcf"/>
+      <bind name="sddcInstallStatus" type="Properties" export-name="sddcInstallStatus"/>
+    </out-binding>
+    <description><![CDATA[ ]]></description>
+    <position y="60.0" x="300.0"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item1" type="task">
+    <display-name><![CDATA[Log]]></display-name>
+    <script encoded="false"><![CDATA[System.log("Username:'" + username + "'" );
+System.log("Password:'" + password + "'" );]]></script>
+    <in-binding>
+      <bind name="username" type="string" export-name="username"/>
+      <bind name="password" type="SecureString" export-name="password"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Simple task with custom script capability.]]></description>
+    <position y="60.0" x="180.0"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

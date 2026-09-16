@@ -1,0 +1,39 @@
+{
+    "schema": {
+        "aString": {
+            "id": "aString",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "aString",
+            "constraints": {
+                "required": false
+            }
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_nubqnlnk",
+                "title": "General",
+                "sections": [
+                    {
+                        "id": "section_7k6i3kwm",
+                        "fields": [
+                            {
+                                "id": "aString",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "itemId": ""
+}

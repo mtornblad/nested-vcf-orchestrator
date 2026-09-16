@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="6599f253-25c2-4049-8e4f-34d5b8b1f492" version="0.0.0" api-version="6.0.0" allowed-operations="vfe" editor-version="2.0" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Deploy SDDC]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <input>
+    <param name="baseUrl" type="string"/>
+    <param name="username" type="string"/>
+    <param name="password" type="SecureString"/>
+    <param name="offline" type="boolean"/>
+    <param name="depotToken" type="string"/>
+    <param name="depotUrl" type="string"/>
+    <param name="sddcSpec" type="string"/>
+  </input>
+  <attrib name="restHost" type="REST:RESTHost" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="token" type="SecureString" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="sddcResult" type="Properties" read-only="false">
+    <value encoded="n"><![CDATA[{}]]></value>
+  </attrib>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <in-binding/>
+    <position y="50.0" x="580.0"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item2" type="task" script-module="se.advania.rest/createHost">
+    <display-name><![CDATA[createHost]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.rest").createHost(baseUrl);
+]]></script>
+    <in-binding>
+      <bind name="baseUrl" type="string" export-name="baseUrl"/>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="REST:RESTHost" export-name="restHost"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="170.0"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item3" type="task" script-module="se.advania.vcf.installer/getToken">
+    <display-name><![CDATA[getToken]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.vcf.installer").getToken(restHost,username,password);
+]]></script>
+    <in-binding>
+      <bind name="restHost" type="REST:RESTHost" export-name="restHost"/>
+      <bind name="username" type="string" export-name="username"/>
+      <bind name="password" type="SecureString" export-name="password"/>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="SecureString" export-name="token"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="300.0"/>
+  </workflow-item>
+  <workflow-item name="item3" out-name="item0" type="task" script-module="se.advania.vcf.installer/DeploySDDC">
+    <display-name><![CDATA[DeploySDDC]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.vcf.installer").DeploySDDC(restHost,installerToken,sddcSpec);
+]]></script>
+    <in-binding>
+      <bind name="restHost" type="REST:RESTHost" export-name="restHost"/>
+      <bind name="installerToken" type="SecureString" export-name="token"/>
+      <bind name="sddcSpec" type="string" export-name="sddcSpec"/>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="Properties" export-name="sddcResult"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="420.0"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

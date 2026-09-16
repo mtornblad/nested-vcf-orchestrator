@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>UTF-16</comment>
+  <entry key="categoryPath">Advania.Custom Resources.VCF</entry>
+  <entry key="name">Create VCF</entry>
+  <entry key="type">Workflow</entry>
+  <entry key="id">649c1113-0448-4ca8-bdee-2e9791164e50</entry>
+</properties>

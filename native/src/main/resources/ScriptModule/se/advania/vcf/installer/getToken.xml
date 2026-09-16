@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getToken" result-type="SecureString" api-version="6.0.0" id="47bb8986-070e-4c79-85ea-6aef7729dd61" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="restHost" t="REST:RESTHost"/>
+  <param n="username" t="string"/>
+  <param n="password" t="SecureString"/>
+  <script encoded="false"><![CDATA[const method = "POST";
+const url = "/v1/tokens";
+const contentType = "application/json"
+
+const content = {
+    "username": username,
+    "password": password
+}
+
+var request = restHost.createRequest(method, url, JSON.stringify(content));
+request.contentType = contentType;
+
+var response = request.execute();
+
+
+var statusCode = response.statusCode;
+var statusCodeAttribute = statusCode;
+System.log("Status code: " + statusCode);
+var contentLength = response.contentLength;
+var headers = response.getAllHeaders();
+var contentAsString = response.contentAsString;
+
+return JSON.parse(contentAsString)["accessToken"];
+]]></script>
+</dunes-script-module>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getBundlesFromRelease" result-type="Array/string" api-version="6.0.0" id="f936ca99-ce83-45d5-a525-c6a4dd078fa9" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="releaseInfo" t="Properties"/>
+  <param n="includeArray" t="Array/string"/>
+  <param n="excludeArray" t="Array/string"/>
+  <script encoded="false"><![CDATA[var result = [];
+
+// Säkerställ att vi har rätt struktur från releaseInfo
+if (!releaseInfo || !releaseInfo.elements || releaseInfo.elements.length === 0) {
+    return result;
+}
+
+var components = releaseInfo.elements[0].components;
+
+if (!components) {
+    return result;
+}
+
+// Hjälpfunktion för att säkert göra om arrayens värden till STORA BOKSTÄVER
+// så vi slipper problem med case-sensitivitet
+function normalizeArray(arr) {
+    var normalized = [];
+    if (arr && arr.length > 0) {
+        for (var k = 0; k < arr.length; k++) {
+            if (arr[k]) { // Kolla så array-elementet inte är null/undefined
+                normalized.push(arr[k].toString().trim().toUpperCase());
+            }
+        }
+    }
+    return normalized;
+}
+
+var includes = normalizeArray(includeArray);
+var excludes = normalizeArray(excludeArray);
+
+// Loopa igenom alla komponenter
+for (var i = 0; i < components.length; i++) {
+    var comp = components[i];
+    var compName = comp.name ? comp.name.toUpperCase() : "";
+
+    // Om vi har en include-array, och komponenten INTE finns i den -> hoppa över
+    if (includes.length > 0 && includes.indexOf(compName) === -1) {
+        continue;
+    }
+
+    // Om vi har en exclude-array, och komponenten FINNS i den -> hoppa över
+    if (excludes.length > 0 && excludes.indexOf(compName) !== -1) {
+        continue;
+    }
+
+    var prodVersion = "N/A";
+    var bId = "N/A";
+
+    // TODO: Skulle behövas en loop till om det fins flera bundles
+    if (comp.versions && comp.versions.length > 0) {
+        prodVersion = comp.versions[0].productVersion || "N/A";
+
+        if (comp.versions[0].artifacts &&
+            comp.versions[0].artifacts.bundles &&
+            comp.versions[0].artifacts.bundles.length > 0) {
+            bId = comp.versions[0].artifacts.bundles[0].id || "N/A";
+        }
+    }
+
+    result.push(bId);
+}
+
+return result;
+]]></script>
+</dunes-script-module>

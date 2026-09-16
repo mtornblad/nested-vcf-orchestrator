@@ -1,0 +1,190 @@
+{
+    "schema": {
+        "errorText": {
+            "type": {
+                "dataType": "string",
+                "isMultiple": false
+            },
+            "label": "Warning",
+            "id": "errorText",
+            "constraints": {},
+            "default": ""
+        },
+        "GENERATED_20848870-6670-48e6-92c0-74b51709caf7": {
+            "type": {
+                "dataType": "string",
+                "isMultiple": false
+            },
+            "id": "GENERATED_20848870-6670-48e6-92c0-74b51709caf7",
+            "constraints": {},
+            "default": "An untrusted certificate is installed on the server and secure communication cannot be guaranteed. Depending on your security policy, this issue might not represent a security concern. You may need to install a trusted SSL certificate on your server to prevent this warning from appearing."
+        },
+        "certInfo": {
+            "type": {
+                "dataType": "string",
+                "isMultiple": false
+            },
+            "label": "Certificate details",
+            "id": "certInfo",
+            "constraints": {},
+            "default": ""
+        },
+        "GENERATED_20c3b982-75f1-46e2-9bdf-79482616e5d7": {
+            "type": {
+                "dataType": "string",
+                "isMultiple": false
+            },
+            "id": "GENERATED_20c3b982-75f1-46e2-9bdf-79482616e5d7",
+            "constraints": {},
+            "default": "This server attemps to identify itself with invalid information, the certicate belongs to a different site, which could indicate an identity theft."
+        },
+        "certificateHostName": {
+            "type": {
+                "dataType": "string",
+                "isMultiple": false
+            },
+            "label": "Certificate issued to",
+            "id": "certificateHostName",
+            "constraints": {},
+            "default": ""
+        },
+        "installCertificate": {
+            "type": {
+                "dataType": "boolean",
+                "isMultiple": false
+            },
+            "label": "Import certificate anyway?",
+            "id": "installCertificate",
+            "constraints": {},
+            "default": true
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_1",
+                "sections": [
+                    {
+                        "id": "section_0",
+                        "fields": [
+                            {
+                                "id": "errorText",
+                                "display": "textArea",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "Details",
+                "state": {
+                    "visible": true
+                }
+            },
+            {
+                "id": "page_2",
+                "sections": [
+                    {
+                        "id": "section_1",
+                        "fields": [
+                            {
+                                "id": "GENERATED_20848870-6670-48e6-92c0-74b51709caf7",
+                                "display": "text",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_2",
+                        "fields": [
+                            {
+                                "id": "certInfo",
+                                "display": "textArea",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "Untrusted certificate",
+                "state": {
+                    "visible": true
+                }
+            },
+            {
+                "id": "page_3",
+                "sections": [
+                    {
+                        "id": "section_3",
+                        "fields": [
+                            {
+                                "id": "GENERATED_20c3b982-75f1-46e2-9bdf-79482616e5d7",
+                                "display": "text",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_4",
+                        "fields": [
+                            {
+                                "id": "certificateHostName",
+                                "display": "textArea",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "Wrong site",
+                "state": {
+                    "visible": true
+                }
+            },
+            {
+                "id": "page_4",
+                "sections": [
+                    {
+                        "id": "section_5",
+                        "fields": [
+                            {
+                                "id": "installCertificate",
+                                "display": "checkbox",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "Import certificate",
+                "state": {
+                    "visible": true
+                }
+            }
+        ]
+    },
+    "options": {
+        "externalValidations": []
+    },
+    "itemId": "item12"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment><![CDATA[{
+  "comment": "{\n  \"comment\": \"UTF-16\",\n  \"returnType\": {\n    \"name\": null,\n    \"type\": \"Array/string\",\n    \"description\": \"\"\n  },\n  \"javadoc\": null,\n  \"crc\": \"3acd4430\"\n}",
+  "returnType": {
+    "name": null,
+    "type": "Array/string",
+    "description": ""
+  },
+  "javadoc": null,
+  "crc": "9407b4f"
+}]]></comment>
+  <entry key="categoryPath">se.advania.vcf.installer</entry>
+  <entry key="name">getBundlesFromRelease</entry>
+  <entry key="type">ScriptModule</entry>
+  <entry key="id">f936ca99-ce83-45d5-a525-c6a4dd078fa9</entry>
+</properties>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment><![CDATA[{
+  "comment": "{\n  \"comment\": \"UTF-16\",\n  \"returnType\": {\n    \"name\": null,\n    \"type\": \"string\",\n    \"description\": \"\"\n  },\n  \"javadoc\": null,\n  \"crc\": \"6b27e305\"\n}",
+  "returnType": {
+    "name": null,
+    "type": "string",
+    "description": ""
+  },
+  "javadoc": null,
+  "crc": "6ecd1f7f"
+}]]></comment>
+  <entry key="categoryPath">se.advania.vcf.installer</entry>
+  <entry key="name">getBundelDownloadStatus</entry>
+  <entry key="type">ScriptModule</entry>
+  <entry key="id">88002f0b-493a-4391-94d0-419978f52cf7</entry>
+</properties>
