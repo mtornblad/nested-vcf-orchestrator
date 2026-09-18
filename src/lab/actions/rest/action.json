@@ -1,0 +1,30 @@
+{
+  "id": "485bec8a-565c-4d6d-861e-d5ed659cd776",
+  "name": "request",
+  "module": "se.advania.rest",
+  "runtime": "python:3.10",
+  "entrypoint": "handler.handler",
+  "description": "HTTP(S) through a direct connection or SOCKS5 proxy. Returns structured response, HTTP status, exit code and timing. Summary logging omits credentials and response content.",
+  "resultType": "Properties",
+  "memoryLimitMb": 128,
+  "timeoutSeconds": 300,
+  "inputs": {
+    "url": "string",
+    "method": "string",
+    "headersJson": "string",
+    "body": "string",
+    "proxyUrl": "string",
+    "proxyUsername": "string",
+    "proxyPassword": "SecureString",
+    "username": "string",
+    "password": "SecureString",
+    "bearerToken": "SecureString",
+    "timeoutSeconds": "number",
+    "maxResponseBytes": "number",
+    "insecure": "boolean",
+    "expectedStatusCodes": "string",
+    "logLevel": "string",
+    "caCertificate": "string",
+    "throwOnError": "boolean"
+  }
+}

@@ -8,7 +8,7 @@ The CCI blueprint remains in `nested-vcf-automation`.
 The [modular deployment guide](docs/modular-lab.md) describes **Deploy Modular
 VCF Lab**, its seven-page request form, catalog configuration, and resume flow.
 The original naming example remains under `src/lab`; the deployment implementation
-is isolated under `src/modular`.
+shares the ordinary `src/lab/classes` and `src/lab/workflows` folders.
 
 The [imported VCF custom-resource workflows](docs/custom-resources.md) are
 included as editable native XML/JavaScript under `native/`. They are packaged
@@ -60,7 +60,7 @@ Maven setup already used to build `nested-vcf-automation`.
 | `src/lab/actions/getLabFqdn.ts` | Action entry point accepting a short hostname and domain |
 | `src/lab/workflows/DescribeLabHost.wf.ts` | Example workflow returning the FQDN without changing infrastructure |
 | `configuration/settings.example.xml` | Non-secret target-profile example |
-| `src/modular/` | Four-stage catalog deployment workflow, request form and typed lab/VCF plan |
+| `src/lab/` | Four-stage catalog deployment workflow, request form and typed lab/VCF plan |
 | `configuration/modular-request-fields.json` | Modular form layout, field defaults and descriptions |
 | `native/src/main/resources` | Imported workflows, actions and forms with their existing IDs |
 | `native/import-manifest.json` | Source inventory, original archive fingerprint and explicit external dependencies |
@@ -147,3 +147,6 @@ host and Orchestrator. See the [first integration test](docs/modular-lab.md#firs
 The native integration additionally has seven regression tests and a combined
 package verified with the official 4.25.0 packager. See the
 [migration validation and versioning notes](docs/custom-resources.md).
+
+The [REST action](docs/rest-action.md) adds HTTP(S) with SOCKS5/SOCKS5h support,
+structured responses and controlled logging to the same package.

@@ -33,7 +33,7 @@ def form():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument("--check", action="store_true"); args = parser.parse_args()
-    target = ROOT / "src/modular/workflows/DeployModularLab.wf.form.json"
+    target = ROOT / "src/lab/workflows/DeployModularLab.wf.form.json"
     content = json.dumps(form(), indent=2) + "\n"
     if args.check:
         if not target.exists() or target.read_text() != content: raise SystemExit("Modular form is out of date; run scripts/generate_modular_form.py")

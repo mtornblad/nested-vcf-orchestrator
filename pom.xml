@@ -14,7 +14,7 @@
     <artifactId>nested-vcf-orchestrator</artifactId>
     <!-- vropkg stamps this version onto all elements. Imported certificate
          workflows are already 3.0.0, so avoid publishing an older version. -->
-    <version>3.0.1-SNAPSHOT</version>
+    <version>3.0.2-SNAPSHOT</version>
     <packaging>package</packaging>
     <name>${project.artifactId}</name>
     <description>TypeScript workflows and actions for the Nested VCF Lab.</description>
@@ -28,6 +28,26 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>stage-python-rest-action</id>
+                        <phase>prepare-package</phase>
+                        <goals><goal>exec</goal></goals>
+                        <configuration>
+                            <executable>python3</executable>
+                            <arguments>
+                                <argument>${project.basedir}/scripts/stage_rest_action.py</argument>
+                                <argument>--output</argument>
+                                <argument>${project.build.directory}/vro-sources/xml/src/main/resources</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>

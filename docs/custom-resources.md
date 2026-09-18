@@ -72,7 +72,7 @@ for this copy so JavaScript and vRO expressions remain literal. The final
 native `.package` contains both the existing TypeScript workflows/actions and
 these imported objects; no separate manual archive import is required.
 
-The package version is **3.0.1-SNAPSHOT**. Build Tools 4.25.0 stamps its package
+The package version is **3.0.2-SNAPSHOT**. Build Tools 4.25.0 stamps its package
 version onto every packaged element. The imported certificate workflows were
 already at `3.0.0`, so continuing with the scaffold's `0.1.0` package would
 produce older element versions. Source XML and the inventory still retain
@@ -96,7 +96,7 @@ From the umbrella root, publish vRO first, then the Automation metadata:
 
 ```bash
 ./orchestration/run_vro.py upload
-./orchestration/run_automation.py upload --variant modular
+./orchestration/run_automation.py upload
 ```
 
 Use `--variant full-stack` if publishing that blueprint instead. The existing
@@ -160,7 +160,7 @@ installation lifecycle.
 
 Edit the XML/JavaScript and adjacent JSON forms here, preserving IDs and
 parameter names used by callers. New TypeScript orchestration stays under
-`src/modular`; there is no reverse conversion of workflow JavaScript into
+`src/lab`; there is no reverse conversion of workflow JavaScript into
 TypeScript. To ingest a newer export, use the Build Tools `vropkg` flat-to-tree
 converter in a temporary directory, remove environment credentials, compare
 the diff and update the inventory before copying it into `native/`.

@@ -1,14 +1,14 @@
 # Deploy Modular VCF Lab
 
 This experimental workflow orders the four **Nested VCF Modular** catalog
-items from the automation component. It lives under `src/modular`, with vRO
+items from the automation component. It lives under `src/lab`, with vRO
 content in **Nested VCF Lab / Modular**. The existing naming example under
 `src/lab` and the original Full Stack VCF blueprint remain available.
 
 ## Prepare the target
 
 1. Publish the Foundation, ESXi, Installer and Jumphost blueprints from
-   [`nested-vcf-automation/modular`](https://github.com/mtornblad/nested-vcf-automation/tree/main/modular).
+   [`nested-vcf-automation/modular`](https://github.com/mtornblad/nested-vcf-automation/tree/main/src/main/resources/blueprints).
    Release them and make all four catalog items available to the intended
    project. Record their **catalog item IDs**, not blueprint or deployment IDs.
 2. Configure an authenticated **VCF Automation plugin connection** in vRO for
@@ -83,7 +83,7 @@ VCF Automation is selected. For larger host sets, select a free starting range.
 
 One `LabPlan` object supplies the blueprints, DNS and VCF JSON. SDDC Manager
 stays separate from Installer. The external VIS DNS record and the image's
-working vApp key names are retained. The [blueprint contract](https://github.com/mtornblad/nested-vcf-automation/blob/main/modular/README.md)
+working vApp key names are retained. The [blueprint contract](https://github.com/mtornblad/nested-vcf-automation/blob/main/docs/modular.md)
 describes resource ownership and exact stage inputs.
 
 ## Execution and outputs
@@ -193,13 +193,13 @@ workflow has no automatic rollback or teardown action in this version.
 | --- | --- |
 | `configuration/modular-request-fields.json` | Form fields, labels, defaults and page grouping |
 | `scripts/generate_modular_form.py` | Deterministic custom-form generation and drift check |
-| `src/modular/classes/LabDefaults.ts` | Runtime defaults for omitted API inputs |
-| `src/modular/classes/LabPlan.ts` | Validate and build the shared public plan |
-| `src/modular/classes/VcfSpec.ts` | Build the VCF specification as a JSON object |
-| `src/modular/classes/CatalogClient.ts` | All Apps API contract and ownership checks |
-| `src/modular/classes/CatalogProfile.ts` | Plugin transport and runtime configuration |
-| `src/modular/classes/ModularRun.ts` | Serializable stages, inputs and polling decisions |
-| `src/modular/workflows/` | vRO canvas, forms and configuration workflow |
+| `src/lab/classes/LabDefaults.ts` | Runtime defaults for omitted API inputs |
+| `src/lab/classes/LabPlan.ts` | Validate and build the shared public plan |
+| `src/lab/classes/VcfSpec.ts` | Build the VCF specification as a JSON object |
+| `src/lab/classes/CatalogClient.ts` | All Apps API contract and ownership checks |
+| `src/lab/classes/CatalogProfile.ts` | Plugin transport and runtime configuration |
+| `src/lab/classes/ModularRun.ts` | Serializable stages, inputs and polling decisions |
+| `src/lab/workflows/` | vRO canvas, forms and configuration workflow |
 
 After changing form fields, keep workflow input declarations and runtime
 defaults aligned, run `python3 scripts/generate_modular_form.py`, then
