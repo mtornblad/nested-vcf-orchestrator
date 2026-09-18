@@ -1,0 +1,35 @@
+{
+    "schema": {
+        "url": {
+            "id": "url",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "url"
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_1",
+                "sections": [
+                    {
+                        "id": "section_0",
+                        "fields": [
+                            {
+                                "id": "url",
+                                "display": "textField",
+                                "signpostPosition": "right-middle"
+                            }
+                        ]
+                    }
+                ],
+                "title": "General"
+            }
+        ]
+    },
+    "options": {
+        "externalValidations": []
+    },
+    "itemId": ""
+}

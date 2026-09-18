@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="createHost" result-type="REST:RESTHost" api-version="6.0.0" id="574d71cd-9a80-4e31-ac34-c3a04df37541" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="baseUrl" t="string"/>
+  <script encoded="false"><![CDATA[var restHost = RESTHostManager.createHost("DynamicRequest");
+var transientHost = RESTHostManager.createTransientHostFrom(restHost);
+transientHost.url = baseUrl;
+
+return transientHost;]]></script>
+</dunes-script-module>

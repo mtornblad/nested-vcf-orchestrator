@@ -1,0 +1,46 @@
+/** Defaults mirror the modular request form, without credentials. */
+export class LabDefaults {
+    public static values(): any {
+        return {
+    "profile_name": "lab",
+    "lab_name": "nested-vcf-modular",
+    "deploy_esxi": true,
+    "deploy_installer": true,
+    "deploy_jumphost": true,
+    "region_name": "region-dclab",
+    "namespace_class": "x-large",
+    "seg_name": "pco",
+    "zone_name": "domain-c9",
+    "storage_policy": "vsan-default-storage-policy",
+    "storage_limit_gib": 8192,
+    "cpu_limit": "400G",
+    "memory_limit_gib": 500,
+    "dns_prefix": "mt",
+    "domain_name": "dclab.se",
+    "lab_cidr": "172.16.0.0/16",
+    "vlan_base": 1601,
+    "dns_forwarder": "1.1.1.1",
+    "ntp_server": "time1.vyos.net",
+    "fabric_mtu": 8800,
+    "vyos_image": "vmi-576b17f7f8892d741",
+    "vyos_class": "best-effort-medium",
+    "esx_image": "vmi-0a831a3ed5c05b0a1",
+    "esx_class": "nested-esx-small",
+    "esx_count": 4,
+    "esx_first_host": 101,
+    "esx_vsan_disk_enabled": true,
+    "esx_vsan_disk_size_gib": 400,
+    "vsan_allow_hcl_incompatible_disks": true,
+    "installer_image": "vmi-992f6225042baf914",
+    "installer_class": "best-effort-2xlarge",
+    "installer_host": 10,
+    "install_automation": false,
+    "run_vcf_installation": false,
+    "depot_url": "",
+    "jumphost_image": "vmi-bb0ae6c186c4d4448",
+    "jumphost_class": "best-effort-medium",
+    "jumphost_host": 4,
+    "resume_deployments": ""
+};
+    }
+}

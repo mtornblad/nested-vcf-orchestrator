@@ -1,0 +1,159 @@
+{
+    "schema": {
+        "baseUrl": {
+            "id": "baseUrl",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "baseUrl",
+            "constraints": {
+                "required": false
+            }
+        },
+        "username": {
+            "id": "username",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "username",
+            "constraints": {
+                "required": false
+            }
+        },
+        "password": {
+            "id": "password",
+            "type": {
+                "dataType": "secureString"
+            },
+            "label": "password",
+            "constraints": {
+                "required": false
+            }
+        },
+        "offline": {
+            "id": "offline",
+            "type": {
+                "dataType": "boolean"
+            },
+            "label": "offline",
+            "constraints": {
+                "required": false
+            }
+        },
+        "depotToken": {
+            "id": "depotToken",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "depotToken",
+            "constraints": {
+                "required": false
+            }
+        },
+        "depotUrl": {
+            "id": "depotUrl",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "depotUrl",
+            "constraints": {
+                "required": false
+            }
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_2repyos7",
+                "title": "General",
+                "sections": [
+                    {
+                        "id": "section_x339d1ra",
+                        "fields": [
+                            {
+                                "id": "baseUrl",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_51rqsfn5",
+                        "fields": [
+                            {
+                                "id": "username",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_jfnkxye8",
+                        "fields": [
+                            {
+                                "id": "password",
+                                "display": "passwordField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_cw6xd67h",
+                        "fields": [
+                            {
+                                "id": "offline",
+                                "display": "checkbox",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_4beffj76",
+                        "fields": [
+                            {
+                                "id": "depotToken",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_ogvaaiza",
+                        "fields": [
+                            {
+                                "id": "depotUrl",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "itemId": ""
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>UTF-16</comment>
+  <entry key="categoryPath">Advania.Test</entry>
+  <entry key="name">Install VCF</entry>
+  <entry key="type">Workflow</entry>
+  <entry key="id">6338706b-b8b4-4b6c-9488-219af138d1d3</entry>
+</properties>

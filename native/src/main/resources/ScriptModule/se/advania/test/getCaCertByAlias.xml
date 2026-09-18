@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getCaCertByAlias" result-type="Configurator:CA" api-version="6.0.0" id="afd20b1e-4201-45f9-851f-6d60a2ac37cc" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="alias" t="string"/>
+  <script encoded="false"><![CDATA[if (!alias) {
+    throw new Error("Parametern 'alias' måste anges.");
+}
+
+var targetKeystoreId = "cakeystore-id";
+var keystores = Config.getKeystores().getKeystores();
+var caKeystore = null;
+
+// 1. Leta upp specifik Keystore via id / dunesId ("cakeystore-id")
+if (keystores && keystores.length > 0) {
+    for (var i = 0; i < keystores.length; i++) {
+        if (keystores[i].id === targetKeystoreId || keystores[i].dunesId === targetKeystoreId) {
+            caKeystore = keystores[i];
+            break;
+        }
+    }
+}
+
+if (!caKeystore) {
+    throw new Error("Kunde inte hitta Keystore med ID: '" + targetKeystoreId + "'.");
+}
+
+// 2. Hämta CA-certifikaten från den hittade keystoren
+var cas = caKeystore.getCAs();
+if (!cas || cas.length === 0) {
+    System.warn("Inga CA-certifikat hittades i " + targetKeystoreId);
+    return null;
+}
+
+var cleanAlias = alias.trim();
+
+// Stöd för wildcard (om du skickar in t.ex. "MyAlias*" eller "*installer*")
+var isWildcard = cleanAlias.indexOf("*") !== -1;
+var aliasRegex = null;
+
+if (isWildcard) {
+    var pattern = "^" + cleanAlias.replace(/([.+?^=!:${}()|\[\]\/\\])/g, "\\$1").replace(/\*/g, ".*") + "$";
+    aliasRegex = new RegExp(pattern, "i");
+}
+
+// 3. Iterera genom certifikaten och matcha alias
+for (var j = 0; j < cas.length; j++) {
+    var ca = cas[j];
+    if (!ca || !ca.id) {
+        continue;
+    }
+
+    // ID har formatet: keystore://cakeystore-id/<alias>
+    var rawAlias = ca.id.substring(ca.id.lastIndexOf("/") + 1);
+    var decodedAlias = rawAlias;
+
+    try {
+        decodedAlias = decodeURIComponent(rawAlias);
+    } catch (e) {
+        decodedAlias = rawAlias;
+    }
+
+    var isMatch = false;
+
+    if (aliasRegex) {
+        // Wildcard-matchning
+        isMatch = aliasRegex.test(decodedAlias) || aliasRegex.test(rawAlias);
+    } else {
+        // Exakt matchning (skiftlägesoberoende)
+        isMatch = (decodedAlias.toLowerCase() === cleanAlias.toLowerCase()) ||
+                  (rawAlias.toLowerCase() === cleanAlias.toLowerCase());
+    }
+
+    if (isMatch) {
+        System.log("Hittade certifikat för alias '" + alias + "': " + decodedAlias + " (" + ca.id + ")");
+        return ca;
+    }
+}
+
+System.warn("Inget certifikat matchade alias '" + alias + "' i " + targetKeystoreId);
+return null;]]></script>
+</dunes-script-module>

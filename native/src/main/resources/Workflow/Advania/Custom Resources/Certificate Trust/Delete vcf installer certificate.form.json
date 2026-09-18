@@ -1,0 +1,62 @@
+{
+    "layout": {
+        "pages": [
+            {
+                "id": "page_1",
+                "sections": [
+                    {
+                        "id": "section_0",
+                        "fields": [
+                            {
+                                "id": "cert",
+                                "display": "valuePickerTree",
+                                "rootElements": {
+                                    "id": "com.vmware.o11n.forms/evalOGNL",
+                                    "type": "scriptAction",
+                                    "parameters": [
+                                        {
+                                            "ognl": "`new Object[]{#objRoot}`"
+                                        },
+                                        {
+                                            "objRoot": "`vcoSerialized:dunes://service.dunes.ch/CustomSDKObject?id='cakeystore-id'&dunesName='Configurator:Keystore'`"
+                                        },
+                                        {
+                                            "objRoot__type_": "`Configurator:Keystore`"
+                                        },
+                                        {
+                                            "return": "`Array/any`"
+                                        }
+                                    ]
+                                },
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "title": "General"
+            }
+        ]
+    },
+    "schema": {
+        "cert": {
+            "type": {
+                "dataType": "reference",
+                "isMultiple": false,
+                "referenceType": "Configurator:CA"
+            },
+            "label": "Trusted Certificate to Delete",
+            "id": "cert",
+            "constraints": {
+                "required": true
+            }
+        }
+    },
+    "options": {
+        "externalValidations": []
+    },
+    "itemId": ""
+}

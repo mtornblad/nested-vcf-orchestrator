@@ -12,7 +12,9 @@
 
     <groupId>io.github.mtornblad</groupId>
     <artifactId>nested-vcf-orchestrator</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <!-- vropkg stamps this version onto all elements. Imported certificate
+         workflows are already 3.0.0, so avoid publishing an older version. -->
+    <version>3.0.2-SNAPSHOT</version>
     <packaging>package</packaging>
     <name>${project.artifactId}</name>
     <description>TypeScript workflows and actions for the Nested VCF Lab.</description>
@@ -23,4 +25,54 @@
         <license.includes></license.includes>
         <license.excludes>**/*</license.excludes>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>stage-python-rest-action</id>
+                        <phase>prepare-package</phase>
+                        <goals><goal>exec</goal></goals>
+                        <configuration>
+                            <executable>python3</executable>
+                            <arguments>
+                                <argument>${project.basedir}/scripts/stage_rest_action.py</argument>
+                                <argument>--output</argument>
+                                <argument>${project.build.directory}/vro-sources/xml/src/main/resources</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <id>stage-native-vro-content</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/vro-sources/xml/src/main/resources</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/native/src/main/resources</directory>
+                                    <!-- Preserve JavaScript and vRO expressions literally. -->
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -1,0 +1,281 @@
+{
+  "schema": "nested-vcf.native-import/v1",
+  "source_package": "customresources.package",
+  "source_sha256": "c456d2ac3df1b3e5c1e0612618fa6062d19726d42edb972ccbb7fe7267c9f326",
+  "source_orchestrator_version": "9.1.0.0400.25532311",
+  "converter": "vropkg 4.25.0",
+  "elements": [
+    {
+      "id": "574d71cd-9a80-4e31-ac34-c3a04df37541",
+      "type": "ScriptModule",
+      "name": "createHost",
+      "category": "se.advania.rest",
+      "path": "ScriptModule/se/advania/rest/createHost.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "afd20b1e-4201-45f9-851f-6d60a2ac37cc",
+      "type": "ScriptModule",
+      "name": "getCaCertByAlias",
+      "category": "se.advania.test",
+      "path": "ScriptModule/se/advania/test/getCaCertByAlias.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "530057a7-f2d1-49ff-9df9-c9cbc8d609ab",
+      "type": "ScriptModule",
+      "name": "DeploySDDC",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/DeploySDDC.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "9108e713-7fe4-4b2c-a00b-5a939ed207be",
+      "type": "ScriptModule",
+      "name": "connectDepot",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/connectDepot.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "10c300f3-8cf3-4dea-b85c-2731570a996d",
+      "type": "ScriptModule",
+      "name": "downloadBundle",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/downloadBundle.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "88002f0b-493a-4391-94d0-419978f52cf7",
+      "type": "ScriptModule",
+      "name": "getBundelDownloadStatus",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/getBundelDownloadStatus.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "f936ca99-ce83-45d5-a525-c6a4dd078fa9",
+      "type": "ScriptModule",
+      "name": "getBundlesFromRelease",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/getBundlesFromRelease.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "fd1fd988-57ec-4fae-a181-2e15104e1ed1",
+      "type": "ScriptModule",
+      "name": "getRelease",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/getRelease.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "47bb8986-070e-4c79-85ea-6aef7729dd61",
+      "type": "ScriptModule",
+      "name": "getToken",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/getToken.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "ab0103c3-7d07-4593-b8ad-0133bb7d0e58",
+      "type": "ScriptModule",
+      "name": "vcfUiReady",
+      "category": "se.advania.vcf.installer",
+      "path": "ScriptModule/se/advania/vcf/installer/vcfUiReady.xml",
+      "source_version": "0.0.0",
+      "forms": []
+    },
+    {
+      "id": "4e1986d7-70cc-4133-bda9-7109e3f83cf3",
+      "type": "Workflow",
+      "name": "Delete vcf installer certificate",
+      "category": "Advania.Custom Resources.Certificate Trust",
+      "path": "Workflow/Advania/Custom Resources/Certificate Trust/Delete vcf installer certificate.xml",
+      "source_version": "3.0.0",
+      "forms": [
+        "Workflow/Advania/Custom Resources/Certificate Trust/Delete vcf installer certificate.form.json"
+      ]
+    },
+    {
+      "id": "f36276fe-ed13-4ea2-8cff-31c58c7460c8",
+      "type": "Workflow",
+      "name": "Import vcf installer certificate",
+      "category": "Advania.Custom Resources.Certificate Trust",
+      "path": "Workflow/Advania/Custom Resources/Certificate Trust/Import vcf installer certificate.xml",
+      "source_version": "3.0.0",
+      "forms": [
+        "Workflow/Advania/Custom Resources/Certificate Trust/Import vcf installer certificate.form.json",
+        "Workflow/Advania/Custom Resources/Certificate Trust/Import vcf installer certificate_input_form_item12.form.json"
+      ]
+    },
+    {
+      "id": "649c1113-0448-4ca8-bdee-2e9791164e50",
+      "type": "Workflow",
+      "name": "Create VCF",
+      "category": "Advania.Custom Resources.VCF",
+      "path": "Workflow/Advania/Custom Resources/VCF/Create VCF.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Custom Resources/VCF/Create VCF.form.json"
+      ]
+    },
+    {
+      "id": "50e6d525-f5c4-41e7-bd1c-aa6f5ea82571",
+      "type": "Workflow",
+      "name": "Delete VCF",
+      "category": "Advania.Custom Resources.VCF",
+      "path": "Workflow/Advania/Custom Resources/VCF/Delete VCF.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Custom Resources/VCF/Delete VCF.form.json"
+      ]
+    },
+    {
+      "id": "a1017dcb-eb20-4a81-b716-95eb8b0af975",
+      "type": "Workflow",
+      "name": "Read VCF",
+      "category": "Advania.Custom Resources.VCF",
+      "path": "Workflow/Advania/Custom Resources/VCF/Read VCF.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Custom Resources/VCF/Read VCF.form.json"
+      ]
+    },
+    {
+      "id": "a6fc3ff1-89d3-4701-a7ef-63eb49eba3e7",
+      "type": "Workflow",
+      "name": "Connect Depot",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Connect Depot.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Connect Depot.form.json"
+      ]
+    },
+    {
+      "id": "6599f253-25c2-4049-8e4f-34d5b8b1f492",
+      "type": "Workflow",
+      "name": "Deploy SDDC",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Deploy SDDC.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Deploy SDDC.form.json"
+      ]
+    },
+    {
+      "id": "5fd7d82f-1945-4a9f-8c16-214a6016e8b8",
+      "type": "Workflow",
+      "name": "Download Bundle",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Download Bundle.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Download Bundle.form.json"
+      ]
+    },
+    {
+      "id": "93b1e613-8353-45ef-a0fe-893f8ac165d1",
+      "type": "Workflow",
+      "name": "Download Bundles For Release",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Download Bundles For Release.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Download Bundles For Release.form.json"
+      ]
+    },
+    {
+      "id": "5845a90c-587d-48a6-9339-75afbdae464e",
+      "type": "Workflow",
+      "name": "Get Bundles LIst",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Get Bundles LIst.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Get Bundles LIst.form.json"
+      ]
+    },
+    {
+      "id": "1ffa45c0-723c-4e18-9132-49cd0b673381",
+      "type": "Workflow",
+      "name": "Get Bundles Status",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Get Bundles Status.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Get Bundles Status.form.json"
+      ]
+    },
+    {
+      "id": "6338706b-b8b4-4b6c-9488-219af138d1d3",
+      "type": "Workflow",
+      "name": "Install VCF",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Install VCF.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Install VCF.form.json"
+      ]
+    },
+    {
+      "id": "db99072e-4a21-4b8c-a93e-a1adfd964c07",
+      "type": "Workflow",
+      "name": "Project Test",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Project Test.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Project Test.form.json"
+      ]
+    },
+    {
+      "id": "946bf055-2cf8-44cf-a8b6-b09f41716b36",
+      "type": "Workflow",
+      "name": "Test Service",
+      "category": "Advania.Test",
+      "path": "Workflow/Advania/Test/Test Service.xml",
+      "source_version": "0.0.0",
+      "forms": [
+        "Workflow/Advania/Test/Test Service.form.json"
+      ]
+    }
+  ],
+  "external_workflows": [
+    {
+      "id": "8a70a326-ffd7-4fef-97e0-2002ac49f5bd",
+      "purpose": "Built-in Configurator certificate deletion; referenced by Delete vcf installer certificate"
+    }
+  ],
+  "required_plugins": [
+    "HTTP-REST",
+    "Configurator (certificate/keystore APIs)"
+  ],
+  "custom_resource_bindings": {
+    "Custom.vcf": {
+      "create": "649c1113-0448-4ca8-bdee-2e9791164e50",
+      "read": "a1017dcb-eb20-4a81-b716-95eb8b0af975",
+      "delete": "50e6d525-f5c4-41e7-bd1c-aa6f5ea82571"
+    },
+    "Custom.VCFInstallerCertificate": {
+      "create": "f36276fe-ed13-4ea2-8cff-31c58c7460c8",
+      "delete": "4e1986d7-70cc-4133-bda9-7109e3f83cf3"
+    }
+  },
+  "migration_changes": [
+    "Decoded the native package to UTF-8 source using the official converter.",
+    "Get Bundles Status: promoted baseUrl, username and password from exported attributes to required inputs.",
+    "Project Test: replaced embedded endpoint, project and token with required inputs.",
+    "Removed raw API response logging from: DeploySDDC, connectDepot, downloadBundle, getBundelDownloadStatus, getRelease, getToken, vcfUiReady"
+  ]
+}

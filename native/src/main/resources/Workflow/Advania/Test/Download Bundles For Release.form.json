@@ -1,0 +1,158 @@
+{
+    "schema": {
+        "baseUrl": {
+            "id": "baseUrl",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "baseUrl",
+            "constraints": {
+                "required": false
+            }
+        },
+        "username": {
+            "id": "username",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "username",
+            "constraints": {
+                "required": false
+            }
+        },
+        "password": {
+            "id": "password",
+            "type": {
+                "dataType": "secureString"
+            },
+            "label": "password",
+            "constraints": {
+                "required": false
+            }
+        },
+        "version": {
+            "id": "version",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "version",
+            "constraints": {
+                "required": false
+            }
+        },
+        "excludeArray": {
+            "id": "excludeArray",
+            "type": {
+                "dataType": "string",
+                "isMultiple": true
+            },
+            "label": "excludeArray"
+        },
+        "includeArray": {
+            "id": "includeArray",
+            "type": {
+                "dataType": "string",
+                "isMultiple": true
+            },
+            "label": "includeArray",
+            "constraints": {
+                "required": false
+            }
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_2repyos7",
+                "title": "General",
+                "sections": [
+                    {
+                        "id": "section_x339d1ra",
+                        "fields": [
+                            {
+                                "id": "baseUrl",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_51rqsfn5",
+                        "fields": [
+                            {
+                                "id": "username",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_jfnkxye8",
+                        "fields": [
+                            {
+                                "id": "password",
+                                "display": "passwordField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_tb0tdz4e",
+                        "fields": [
+                            {
+                                "id": "version",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_fsydje1s",
+                        "fields": [
+                            {
+                                "id": "excludeArray",
+                                "display": "array",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_s6mfr3lf",
+                        "fields": [
+                            {
+                                "id": "includeArray",
+                                "display": "array",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "itemId": ""
+}

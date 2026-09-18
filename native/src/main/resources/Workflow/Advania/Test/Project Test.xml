@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="db99072e-4a21-4b8c-a93e-a1adfd964c07" version="0.0.0" api-version="6.0.0" allowed-operations="vfe" editor-version="2.0" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Project Test]]></display-name>
+  <input>
+    <param name="baseUrl" type="string"/>
+    <param name="project" type="string"/>
+    <param name="token" type="SecureString"/>
+  </input>
+  <position y="50.0" x="100.0"/>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <in-binding/>
+    <position y="50.0" x="380.0"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item0" type="task">
+    <display-name><![CDATA[Scriptable task]]></display-name>
+    <script encoded="false"><![CDATA[if (!baseUrl || !project || !token) {
+    throw new Error("VCFA URL, CCI project namespace and access token are required.");
+}
+var endpoint = "/cci/kubernetes/apis/topology.cci.vmware.com/v1alpha1/namespaces/" +
+    encodeURIComponent(project) + "/regionbindings";
+var restHost = RESTHostManager.createHost("DynamicRequest");
+var transientHost = RESTHostManager.createTransientHostFrom(restHost);
+transientHost.url = baseUrl;
+var request = transientHost.createRequest("GET", endpoint, null);
+request.setHeader("Authorization", "Bearer " + token);
+request.setHeader("Accept", "application/json");
+var response = request.execute();
+System.log("Region bindings request returned HTTP " + response.statusCode);
+if (response.statusCode < 200 || response.statusCode >= 300) {
+    throw new Error("Cannot retrieve region bindings: HTTP " + response.statusCode);
+}
+var result = JSON.parse(response.contentAsString);
+var items = result.items || [];
+System.log("Region bindings returned: " + items.length);
+for (var i = 0; i < items.length; i++) {
+    System.log("Region binding: " + items[i].metadata.name);
+}
+]]></script>
+    <in-binding>
+      <bind name="baseUrl" type="string" export-name="baseUrl"/>
+      <bind name="project" type="string" export-name="project"/>
+      <bind name="token" type="SecureString" export-name="token"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Simple task with custom script capability.]]></description>
+    <position y="60.0" x="200.0"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

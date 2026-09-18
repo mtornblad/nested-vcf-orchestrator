@@ -6,6 +6,9 @@
 ## Patterns must be listed on separate rows (without in-line comments), can be negated with a single '!' at the start and will be trimmed before processing.
 ## The 'TestHelpers'category will contain these two patterns by default: '**/*_helper.js', '**/*.helper.[tj]s'
 ## Rows starting with '##' are considered as comments and will be ignored on processing.
+## The Python action is staged as a polyglot action, not as loose resources.
+**/lab/actions/rest/**
+**/__pycache__/**
 # Packaging
 ## Files with these paths will not be included in the vro package.
 ## For Workflows, Configurations, Resources and Policies: it is recommended to use the 'General' category (will skip xml element generation).

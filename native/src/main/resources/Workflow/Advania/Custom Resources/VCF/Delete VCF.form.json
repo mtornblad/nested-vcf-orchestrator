@@ -1,0 +1,39 @@
+{
+    "schema": {
+        "vcf": {
+            "id": "vcf",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "vcf",
+            "constraints": {
+                "required": false
+            }
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_njeevj4h",
+                "title": "General",
+                "sections": [
+                    {
+                        "id": "section_uz2jhpef",
+                        "fields": [
+                            {
+                                "id": "vcf",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "itemId": ""
+}

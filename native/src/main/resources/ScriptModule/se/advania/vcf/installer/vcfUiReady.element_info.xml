@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment><![CDATA[{
+  "comment": "{\n  \"comment\": \"UTF-16\",\n  \"returnType\": {\n    \"name\": null,\n    \"type\": \"boolean\",\n    \"description\": \"\"\n  },\n  \"javadoc\": null,\n  \"crc\": \"7397ca68\"\n}",
+  "returnType": {
+    "name": null,
+    "type": "boolean",
+    "description": ""
+  },
+  "javadoc": null,
+  "crc": "3025714f"
+}]]></comment>
+  <entry key="categoryPath">se.advania.vcf.installer</entry>
+  <entry key="name">vcfUiReady</entry>
+  <entry key="type">ScriptModule</entry>
+  <entry key="id">ab0103c3-7d07-4593-b8ad-0133bb7d0e58</entry>
+</properties>

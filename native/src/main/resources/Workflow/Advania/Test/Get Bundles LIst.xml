@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="5845a90c-587d-48a6-9339-75afbdae464e" version="0.0.0" api-version="6.0.0" allowed-operations="vfe" editor-version="2.0" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Get Bundles LIst]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <input>
+    <param name="baseUrl" type="string"/>
+    <param name="username" type="string"/>
+    <param name="password" type="SecureString"/>
+    <param name="version" type="string"/>
+    <param name="excludeArray" type="Array/string"/>
+  </input>
+  <attrib name="restHost" type="REST:RESTHost" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="token" type="SecureString" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="releaseInfo" type="Properties" read-only="false">
+    <value encoded="n"><![CDATA[{}]]></value>
+  </attrib>
+  <attrib name="includeArray" type="Array/string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="bundles" type="Array/Properties" read-only="false">
+    <value encoded="n"><![CDATA[[]]]></value>
+  </attrib>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <in-binding/>
+    <position y="50.0" x="740.0"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item2" type="task" script-module="se.advania.rest/createHost">
+    <display-name><![CDATA[createHost]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.rest").createHost(baseUrl);
+]]></script>
+    <in-binding>
+      <bind name="baseUrl" type="string" export-name="baseUrl"/>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="REST:RESTHost" export-name="restHost"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="170.0"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item3" type="task" script-module="se.advania.vcf.installer/getToken">
+    <display-name><![CDATA[getToken]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.vcf.installer").getToken(restHost,username,password);
+]]></script>
+    <in-binding>
+      <bind name="restHost" type="REST:RESTHost" export-name="restHost"/>
+      <bind name="username" type="string" export-name="username"/>
+      <bind name="password" type="SecureString" export-name="password"/>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="SecureString" export-name="token"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="300.0"/>
+  </workflow-item>
+  <workflow-item name="item3" out-name="item4" type="task" script-module="se.advania.vcf.installer/getRelease">
+    <display-name><![CDATA[getRelease]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.vcf.installer").getRelease(restHost,installerToken,version);
+]]></script>
+    <in-binding>
+      <bind name="restHost" type="REST:RESTHost" export-name="restHost"/>
+      <bind name="installerToken" type="SecureString" export-name="token"/>
+      <bind name="version" type="string" export-name="version">
+        <description><![CDATA[ie 9.1.1.0 or 9.1.0.0]]></description>
+      </bind>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="Properties" export-name="releaseInfo"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="420.0"/>
+  </workflow-item>
+  <workflow-item name="item4" out-name="item0" type="task" script-module="se.advania.vcf.installer/getBundlesFromRelease">
+    <display-name><![CDATA[getBundlesFromRelease]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("se.advania.vcf.installer").getBundlesFromRelease(releaseInfo, includeArray, excludeArray);
+]]></script>
+    <in-binding>
+      <bind name="releaseInfo" type="Properties" export-name="releaseInfo"/>
+      <bind name="includeArray" type="Array/string" export-name="includeArray"/>
+      <bind name="excludeArray" type="Array/string" export-name="excludeArray"/>
+    </in-binding>
+    <out-binding>
+      <bind name="actionResult" type="Array/Properties" export-name="bundles"/>
+    </out-binding>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="60.0" x="560.0"/>
+  </workflow-item>
+  <presentation>
+    <p-param name="baseUrl">
+      <desc><![CDATA[baseUrl]]></desc>
+    </p-param>
+    <p-param name="username">
+      <desc><![CDATA[username]]></desc>
+    </p-param>
+    <p-param name="password">
+      <desc><![CDATA[password]]></desc>
+    </p-param>
+    <p-param name="version">
+      <desc><![CDATA[version]]></desc>
+    </p-param>
+    <p-param name="excludeArray">
+      <desc><![CDATA[excludeArray]]></desc>
+    </p-param>
+  </presentation>
+</workflow>

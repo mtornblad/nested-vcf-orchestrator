@@ -1,0 +1,209 @@
+{
+    "schema": {
+        "baseUrl": {
+            "id": "baseUrl",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "baseUrl",
+            "constraints": {
+                "required": false
+            }
+        },
+        "username": {
+            "id": "username",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "username",
+            "constraints": {
+                "required": false
+            }
+        },
+        "password": {
+            "id": "password",
+            "type": {
+                "dataType": "secureString"
+            },
+            "label": "password",
+            "constraints": {
+                "required": false
+            }
+        },
+        "version": {
+            "id": "version",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "version",
+            "constraints": {
+                "required": false
+            }
+        },
+        "excludeArray": {
+            "id": "excludeArray",
+            "type": {
+                "dataType": "string",
+                "isMultiple": true
+            },
+            "label": "excludeArray",
+            "constraints": {
+                "required": false
+            }
+        },
+        "depotUrl": {
+            "id": "depotUrl",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "depotUrl",
+            "constraints": {
+                "required": false
+            }
+        },
+        "includeArray": {
+            "id": "includeArray",
+            "type": {
+                "dataType": "string",
+                "isMultiple": true
+            },
+            "label": "includeArray",
+            "constraints": {
+                "required": false
+            }
+        },
+        "sddcSpec": {
+            "id": "sddcSpec",
+            "type": {
+                "dataType": "string"
+            },
+            "label": "sddcSpec",
+            "constraints": {
+                "required": false
+            }
+        }
+    },
+    "layout": {
+        "pages": [
+            {
+                "id": "page_oh917z8o",
+                "title": "General",
+                "sections": [
+                    {
+                        "id": "section_54seh7el",
+                        "fields": [
+                            {
+                                "id": "baseUrl",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_tjswebtd",
+                        "fields": [
+                            {
+                                "id": "username",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_re01x08h",
+                        "fields": [
+                            {
+                                "id": "password",
+                                "display": "passwordField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_z2x674dd",
+                        "fields": [
+                            {
+                                "id": "version",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_yqtrysxj",
+                        "fields": [
+                            {
+                                "id": "excludeArray",
+                                "display": "array",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_9zjm1y2c",
+                        "fields": [
+                            {
+                                "id": "depotUrl",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_apjq9vq4",
+                        "fields": [
+                            {
+                                "id": "includeArray",
+                                "display": "array",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "section_sibherxe",
+                        "fields": [
+                            {
+                                "id": "sddcSpec",
+                                "display": "textField",
+                                "signpostPosition": "right-middle",
+                                "state": {
+                                    "visible": true,
+                                    "read-only": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "itemId": ""
+}

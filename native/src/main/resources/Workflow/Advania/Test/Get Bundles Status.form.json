@@ -1,0 +1,96 @@
+{
+  "schema": {
+    "bundleId": {
+      "id": "bundleId",
+      "type": {
+        "dataType": "string"
+      },
+      "label": "bundleId",
+      "constraints": {
+        "required": false
+      }
+    },
+    "baseUrl": {
+      "id": "baseUrl",
+      "type": {
+        "dataType": "string"
+      },
+      "label": "Installer URL",
+      "constraints": {
+        "required": true
+      }
+    },
+    "username": {
+      "id": "username",
+      "type": {
+        "dataType": "string"
+      },
+      "label": "Username",
+      "constraints": {
+        "required": true
+      }
+    },
+    "password": {
+      "id": "password",
+      "type": {
+        "dataType": "secureString"
+      },
+      "label": "Password",
+      "constraints": {
+        "required": true
+      }
+    }
+  },
+  "layout": {
+    "pages": [
+      {
+        "id": "page_be2aqkxv",
+        "title": "General",
+        "sections": [
+          {
+            "id": "section_sr69bjca",
+            "fields": [
+              {
+                "id": "bundleId",
+                "display": "textField",
+                "signpostPosition": "right-middle",
+                "state": {
+                  "visible": true,
+                  "read-only": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "connection_baseUrl",
+            "fields": [
+              {
+                "id": "baseUrl",
+                "display": "textField"
+              }
+            ]
+          },
+          {
+            "id": "connection_username",
+            "fields": [
+              {
+                "id": "username",
+                "display": "textField"
+              }
+            ]
+          },
+          {
+            "id": "connection_password",
+            "fields": [
+              {
+                "id": "password",
+                "display": "passwordField"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "itemId": ""
+}

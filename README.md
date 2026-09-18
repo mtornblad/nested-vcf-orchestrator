@@ -5,6 +5,15 @@ workflows used by Nested VCF Lab. Its intended umbrella location is
 `components/vro-typescript`, with its own repository and independent releases.
 The CCI blueprint remains in `nested-vcf-automation`.
 
+The [modular deployment guide](docs/modular-lab.md) describes **Deploy Modular
+VCF Lab**, its seven-page request form, catalog configuration, and resume flow.
+The original naming example remains under `src/lab`; the deployment implementation
+shares the ordinary `src/lab/classes` and `src/lab/workflows` folders.
+
+The [imported VCF custom-resource workflows](docs/custom-resources.md) are
+included as editable native XML/JavaScript under `native/`. They are packaged
+together with TypeScript, preserving the workflow IDs used by Automation.
+
 ## Toolchain and output
 
 The Maven parent is `com.vmware.pscoe.o11n:typescript-project-all:4.25.0`, matching
@@ -28,6 +37,7 @@ its `vrotsc` source declares TypeScript 5.7.2 and the Node/npm requirements abov
 ```bash
 make validate            # Offline metadata check; no Maven downloads
 make test                # Compile and run the TypeScript/Jasmine test lifecycle
+make test-native         # Check the imported workflows/actions without Maven
 make package             # Build the native .package, including tests
 make push PROFILE=lab    # Build and upload to the target Orchestrator
 make clean               # Remove local Maven build output
@@ -50,6 +60,10 @@ Maven setup already used to build `nested-vcf-automation`.
 | `src/lab/actions/getLabFqdn.ts` | Action entry point accepting a short hostname and domain |
 | `src/lab/workflows/DescribeLabHost.wf.ts` | Example workflow returning the FQDN without changing infrastructure |
 | `configuration/settings.example.xml` | Non-secret target-profile example |
+| `src/lab/` | Four-stage catalog deployment workflow, request form and typed lab/VCF plan |
+| `configuration/modular-request-fields.json` | Modular form layout, field defaults and descriptions |
+| `native/src/main/resources` | Imported workflows, actions and forms with their existing IDs |
+| `native/import-manifest.json` | Source inventory, original archive fingerprint and explicit external dependencies |
 
 The workflow has a stable UUID so that a new package updates the same workflow.
 Give every new workflow its own stable UUID. Keep VM lifecycle calls, REST
@@ -125,6 +139,14 @@ tag `v4.25.0`, commit `2ead8f52c9ed351205c6054b770d3a385d403314`:
 [archetype POM](https://github.com/vmware/build-tools-for-vmware-aria/blob/v4.25.0/maven/archetypes/ts/src/main/resources/archetype-resources/pom.xml).
 Build Tools is maintained by VMware/Broadcom and its contributors.
 
-The initial scaffold was checked offline. Full Maven packaging, the vRO
-transpiler/Jasmine lifecycle, and import/execution on Orchestrator must be run
-on the configured Ubuntu build host; they were not run in the scaffold workspace.
+The modular implementation has been checked with the official 4.25.0 vRO
+transpiler and standalone TypeScript/Jasmine tests. Full Maven package assembly
+and import/execution still need verification on the configured Ubuntu build
+host and Orchestrator. See the [first integration test](docs/modular-lab.md#first-integration-test).
+
+The native integration additionally has seven regression tests and a combined
+package verified with the official 4.25.0 packager. See the
+[migration validation and versioning notes](docs/custom-resources.md).
+
+The [REST action](docs/rest-action.md) adds HTTP(S) with SOCKS5/SOCKS5h support,
+structured responses and controlled logging to the same package.

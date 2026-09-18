@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getRelease" result-type="Properties" api-version="6.0.0" id="fd1fd988-57ec-4fae-a181-2e15104e1ed1" version="0.0.0" allowed-operations="vef">
+  <description/>
+  <param n="restHost" t="REST:RESTHost"/>
+  <param n="installerToken" t="SecureString"/>
+  <param n="version" t="string"><![CDATA[ie 9.1.1.0 or 9.1.0.0]]></param>
+  <script encoded="false"><![CDATA[const method = "GET";
+const url = "/v1/releases/VCF/release-components?releaseVersion=" + version + "&automatedInstall=true&imageType=INSTALL";
+const contentType = "application/json"
+
+const content = null;
+
+
+var request = restHost.createRequest(method, url, JSON.stringify(content));
+request.contentType = contentType;
+request.setHeader("Authorization", "Bearer " + installerToken);
+
+
+var response = request.execute();
+
+
+var statusCode = response.statusCode;
+var statusCodeAttribute = statusCode;
+System.log("Status code: " + statusCode);
+var contentLength = response.contentLength;
+var headers = response.getAllHeaders();
+var contentAsString = response.contentAsString;
+
+return JSON.parse(contentAsString);
+
+
+]]></script>
+</dunes-script-module>
